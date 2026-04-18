@@ -60,22 +60,22 @@ const RolesDashboard = () => {
                 key={role.id}
                 onClick={() => setActiveRole(role)}
                 className={clsx(
-                  "p-6 text-left rounded-3xl border transition-all duration-300",
+                  "p-4 md:p-6 text-left rounded-2xl md:rounded-3xl border transition-all duration-300",
                   activeRole.id === role.id 
                     ? `${role.color} scale-[1.02] shadow-lg` 
                     : "bg-white/5 border-white/10 text-white/50 hover:bg-white/10"
                 )}
               >
-                <div className="flex items-center gap-4">
-                  {role.icon}
-                  <span className="font-bold text-lg">{role.title}</span>
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="md:scale-100 scale-75">{role.icon}</div>
+                  <span className="font-bold text-base md:text-lg">{role.title}</span>
                 </div>
               </button>
             ))}
           </div>
 
           {/* Interacción Feed en vivo */}
-          <div className="lg:col-span-2 glass-dark rounded-[3rem] p-8 md:p-12 relative overflow-hidden group">
+          <div className="lg:col-span-2 glass-dark rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-8 opacity-20 transform translate-x-4 -translate-y-4 group-hover:scale-110 transition-transform duration-700">
               <Link size={120} className="text-white" />
             </div>
@@ -90,12 +90,12 @@ const RolesDashboard = () => {
                   <span className="font-mono text-sm text-acento uppercase">Interacción en vivo</span>
                 </div>
                 
-                <h4 className="text-3xl font-sans font-bold text-white mb-6">
+                <h4 className="text-2xl md:text-3xl font-sans font-bold text-white mb-4 md:mb-6">
                   {activeRole.title}
                 </h4>
                 
                 <p className={clsx(
-                  "text-xl text-white/80 leading-relaxed font-light transition-opacity duration-300",
+                  "text-lg md:text-xl text-white/80 leading-relaxed font-light transition-opacity duration-300",
                   isTyping ? "opacity-0" : "opacity-100"
                 )}>
                   {activeRole.desc}

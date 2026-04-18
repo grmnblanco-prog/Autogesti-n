@@ -2,12 +2,15 @@
   "name": "presentacion-autogestion",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://grmnblanco-prog.github.io/Autogesti-n",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "npx gh-pages -d dist"
   },
   "dependencies": {
     "clsx": "^2.1.1",

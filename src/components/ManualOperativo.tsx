@@ -59,7 +59,7 @@ const ManualOperativo = () => {
           </p>
         </div>
 
-        <div className="w-full relative min-h-[350px] flex items-center justify-center mt-4">
+        <div className="w-full relative min-h-[600px] md:min-h-[400px] flex items-center justify-center mt-4">
           {slides.map((slide, index) => (
             <div 
               key={slide.id}
@@ -68,24 +68,24 @@ const ManualOperativo = () => {
                 activeSlide === index ? "opacity-100 translate-x-0 z-10 pointer-events-auto" : "opacity-0 translate-x-12 z-0 pointer-events-none"
               )}
             >
-              <div className="flex items-center gap-4 mb-6 text-acento">
-                {slide.icon}
-                <h3 className="text-2xl md:text-3xl font-bold">{slide.title}</h3>
+              <div className="flex items-center gap-4 mb-6 text-acento text-center md:text-left">
+                <div className="hidden md:block">{slide.icon}</div>
+                <h3 className="text-xl md:text-3xl font-bold">{slide.title}</h3>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                 {/* Ordinario */}
-                <div className="glass p-8 rounded-[2rem] border-t-4 border-t-principal flex flex-col h-full bg-white/80">
-                  <h4 className="text-sm font-mono text-slate-500 uppercase tracking-widest mb-4">Manual Ordinario</h4>
-                  <p className="text-lg leading-relaxed whitespace-pre-line text-slate-700">
+                <div className="glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-t-4 border-t-principal flex flex-col h-full bg-white/80">
+                  <h4 className="text-xs md:text-sm font-mono text-slate-500 uppercase tracking-widest mb-4">Manual Ordinario</h4>
+                  <p className="text-base md:text-lg leading-relaxed whitespace-pre-line text-slate-700">
                     {slide.ord}
                   </p>
                 </div>
 
                 {/* Excepcion */}
-                <div className="glass p-8 rounded-[2rem] border-t-4 border-t-acento flex flex-col h-full bg-blue-50/80">
-                  <h4 className="text-sm font-mono text-acento uppercase tracking-widest mb-4">Manual de Excepción</h4>
-                  <p className="text-lg leading-relaxed whitespace-pre-line text-slate-700">
+                <div className="glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-t-4 border-t-acento flex flex-col h-full bg-blue-50/80">
+                  <h4 className="text-xs md:text-sm font-mono text-acento uppercase tracking-widest mb-4">Manual de Excepción</h4>
+                  <p className="text-base md:text-lg leading-relaxed whitespace-pre-line text-slate-700">
                     {slide.exc}
                   </p>
                 </div>

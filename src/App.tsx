@@ -1,7 +1,6 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProgramExplanation from './components/ProgramExplanation';
 import ManualOperativo from './components/ManualOperativo';
@@ -24,7 +23,6 @@ function App() {
 
   return (
     <div ref={appRef} className="bg-fondo text-texto font-sans overflow-hidden">
-      <Navbar />
       <Hero />
       <ProgramExplanation />
       <ManualOperativo />

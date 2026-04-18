@@ -157,7 +157,7 @@ const ProgramExplanation = () => {
         
         <div className="text-center mb-16">
           <h2 className="text-sm font-mono text-acento uppercase tracking-widest mb-4">Arquitectura del Programa</h2>
-          <h3 className="text-4xl md:text-6xl font-sans font-bold text-white leading-tight">
+          <h3 className="text-3xl md:text-6xl font-sans font-bold text-white leading-tight">
             ¿Qué es la <span className="font-serif italic text-white/80">Autogestión?</span>
           </h3>
         </div>
@@ -173,7 +173,7 @@ const ProgramExplanation = () => {
                   key={concept.id}
                   onClick={() => handleSelect(concept)}
                   className={clsx(
-                    "p-5 rounded-2xl text-left transition-all duration-300 border",
+                    "p-4 md:p-5 rounded-2xl text-left transition-all duration-300 border",
                     isActive 
                       ? `${concept.bg} ${concept.color} scale-[1.02] shadow-lg` 
                       : "bg-white/5 border-white/10 text-white/50 hover:bg-white/10"
@@ -181,9 +181,9 @@ const ProgramExplanation = () => {
                 >
                   <div className="flex items-center gap-4">
                     <div className={isActive ? concept.color.split(' ')[0] : 'text-white/40'}>
-                      {concept.icon}
+                      {React.cloneElement(concept.icon as React.ReactElement, { size: 24 })}
                     </div>
-                    <span className="font-bold text-lg">{concept.title}</span>
+                    <span className="font-bold text-base md:text-lg">{concept.title}</span>
                   </div>
                 </button>
               );
@@ -191,7 +191,7 @@ const ProgramExplanation = () => {
           </div>
 
           {/* Panel de Contenido */}
-          <div className="lg:col-span-8 glass-dark rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden flex flex-col justify-center">
+          <div className="lg:col-span-8 glass-dark rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 relative overflow-hidden flex flex-col justify-center">
             
             {/* Background Icon Watermark */}
             <div className={clsx(
@@ -213,7 +213,7 @@ const ProgramExplanation = () => {
                 </span>
               </div>
               
-              <h4 className="text-3xl md:text-4xl font-sans font-bold text-white mb-8">
+              <h4 className="text-2xl md:text-4xl font-sans font-bold text-white mb-6 md:mb-8">
                 {activeConcept.title}
               </h4>
               
